@@ -8,7 +8,7 @@ from langchain.chat_models import ChatOpenAI
 
 chat_model = ChatOpenAI()
 st.title("Quiz Generator")
-content = st.scrollableTextbox('Context for Quizes')
+content = stx.scrollableTextbox('Context for Quizes')
 
 if st.button("Make Quizes"):
     with st.spinner("Making quizes ..."):
