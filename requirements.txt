@@ -1,3 +1,2 @@
 langchain
 openai
-streamlit_scrollable_textbox
