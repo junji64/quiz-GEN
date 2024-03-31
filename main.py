@@ -1,14 +1,13 @@
 # from dotenv import load_dotenv
 # load_dotenv()
 import streamlit as st
-import streamlit_scrollable_textbox as stx
 
   
 from langchain.chat_models import ChatOpenAI
 
 chat_model = ChatOpenAI()
 st.title("Quiz Generator")
-content = stx.scrollableTextbox('Context for Quizes')
+content = st.text_area('Context for Quizes','Please type in or copy/pasete the context for quizes ...')
 
 if st.button("Make Quizes"):
     with st.spinner("Making quizes ..."):
