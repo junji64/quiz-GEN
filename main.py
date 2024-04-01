@@ -11,9 +11,11 @@ content = st.text_area('퀴즈 생성에 사용될 공부내용','퀴즈 생성�
 
 if st.button("Make Quizes"):
     with st.spinner("Making Quizes ..."):
-        prompt = "Create a quiz based on the context of " + content + \
-                 ". Include a variety of question types such as multiple choice, true/false, and short answer" + \
-                 " to test the participants understanding and knowledge depth."\
-                 "Put the answer at the end of each quiz. After finishing to generate quizes, translate them into Korean for print."
+        prompt = f'''
+        Create a quiz based on the context of {content}. 
+        Include a variety of question types such as multiple choice, true/false, and short answer
+        to test the participants understanding and knowledge depth.
+        Put the answer at the end of each quiz. After finishing to generate quizes, translate them into Korean for print.
+        '''
         result = chat_model.predict(prompt) 
     st.write(result)
