@@ -2,7 +2,9 @@ import streamlit as st
 from langchain.chat_models import ChatOpenAI
 
 chat_model = ChatOpenAI()
+
 st.title("퀴즈/문제 생성기")
+
 content = st.text_area('퀴즈 생성에 사용될 공부내용','퀴즈 생성에 사용될 공부내용을 입력 또는 복사해서 붙여넣으세요 ...')
 
 if st.button("Make Quizes"):
@@ -34,8 +36,6 @@ if st.button("벡터 변환"):
         raw_text = get_pdf_text(pdf_docs)
 
 
-
-
 if st.button("Check"):
     with st.spinner("Checking ..."):
         prompt = f'''
@@ -55,9 +55,11 @@ if st.button("Check"):
 
         최종적으로 검토 의견을 한줄로 정리해주세요
 
-        ====
+        ======
+
         {raw_text}
-        ====
+        
+        ======
 
         '''
         result = chat_model.predict(prompt) 
