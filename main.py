@@ -18,12 +18,6 @@ if st.button("Make Quizes"):
 
 from PyPDF2 import PdfReader
 
-pdf_docs = st.file_uploader("PDF 문서 여러개 업로드 가능.", accept_multiple_files=True, type=["pdf"])
-
-if st.button("벡터 변환"):
-    with st.spinner("변환 중"):
-        raw_text = get_pdf_text(pdf_docs)
-
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
@@ -31,6 +25,15 @@ def get_pdf_text(pdf_docs):
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
+
+
+pdf_docs = st.file_uploader("PDF 문서 여러개 업로드 가능.", accept_multiple_files=True, type=["pdf"])
+
+if st.button("벡터 변환"):
+    with st.spinner("변환 중"):
+        raw_text = get_pdf_text(pdf_docs)
+
+
 
 
 if st.button("Check"):
