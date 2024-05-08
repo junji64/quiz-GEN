@@ -34,6 +34,7 @@ pdf_docs = st.file_uploader("PDF 문서 여러개 업로드 가능.", accept_mul
 if st.button("벡터 변환"):
     with st.spinner("변환 중"):
         raw_text = get_pdf_text(pdf_docs)
+    st.write(raw_text)
 
 
 if st.button("Check"):
